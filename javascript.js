@@ -2,25 +2,19 @@ let variableStorage;
 let personajes = [];
 let docrender = document.querySelector(".tarjetas_personajes");
 
-// if (localStorage.getItem("storagearray") == null) {
-// } else {
-//   variableStorage = localStorage.getItem(JSON.parse(variableStorage));
-//   render(variableStorage);
-//   console.log(variableStorage);
-// }
+if (localStorage.getItem("storagearray") == null) {
+  fetch("https://rickandmortyapi.com/api/character")
+    .then((response) => response.json())
+    .then((data) => {
+      personajes = data.results;
+      console.log(personajes);
+      render(personajes);
+    });
 
-fetch("https://rickandmortyapi.com/api/character")
-  .then((response) => response.json())
-  .then((data) => {
-    personajes = data.results;
-    console.log(personajes);
-    render(personajes);
-  });
-
-let render = (personajesArr) => {
-  docrender.innerHTML = "";
-  for (let i in personajesArr) {
-    let card = `<div class="col-6 px-3">
+  let render = (personajesArr) => {
+    docrender.innerHTML = "";
+    for (let i in personajesArr) {
+      let card = `<div class="col-6 px-3">
 <div class="card mb-3 mx-auto" style="max-width: 540px">
   <div class="row g-0">
     <div class="col-md-4">
@@ -38,6 +32,11 @@ let render = (personajesArr) => {
 </div>
 </div>`;
 
-    docrender.innerHTML += card;
-  }
-};
+      docrender.innerHTML += card;
+    }
+  };
+} else {
+  variableStorage = localStorage.getItem(JSON.parse(variableStorage));
+  render(variableStorage);
+  console.log(variableStorage);
+}

@@ -51,7 +51,7 @@ function storage(storagearray) {
   if (localStorage.getItem("storagearray") == null) {
     variableStorage = storagearray;
   } else {
-    variableStorage = localStorage.getItem(JSON.parse(variableStorage));
+    variableStorage = localStorage.getItem(JSON.parse("storagearray"));
   }
 
   localStorage.setItem("storagearray", JSON.stringify(variableStorage));
