@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.titulo {
+  height: 20rem;
+}
+
+h1 {
+  font-size: 6rem !important;
+}
