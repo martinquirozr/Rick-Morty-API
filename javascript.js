@@ -2,12 +2,12 @@ let variableStorage;
 let personajes = [];
 let docrender = document.querySelector(".tarjetas_personajes");
 
-if (localStorage.getItem("storagearray") == null) {
-} else {
-  variableStorage = localStorage.getItem(JSON.parse(variableStorage));
-  render(variableStorage);
-  console.log(variableStorage);
-}
+// if (localStorage.getItem("storagearray") == null) {
+// } else {
+//   variableStorage = localStorage.getItem(JSON.parse(variableStorage));
+//   render(variableStorage);
+//   console.log(variableStorage);
+// }
 
 fetch("https://rickandmortyapi.com/api/character")
   .then((response) => response.json())
