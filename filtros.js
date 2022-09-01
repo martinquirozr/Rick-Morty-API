@@ -7,7 +7,7 @@ let buscar = (e) => {
     //let restaurant_minus= restaurant.businessname.toLowerCase()
     return per.name.toLowerCase().includes(name);
   });
-  // render(filtrados);
+  storage(filtrados);
 };
 
 // Se llamana a todos los botones y se les agrega una acción
@@ -46,14 +46,41 @@ let buscarEstado = (estado) => {
 
 // Función Storage
 
-function storage(storagearray) {
-  localStorage.removeItem("storagearray");
-  if (localStorage.getItem("storagearray") == null) {
-    variableStorage = storagearray;
-  } else {
-    variableStorage = localStorage.getItem(JSON.parse("storagearray"));
-  }
+// // Función que sirve
 
-  localStorage.setItem("storagearray", JSON.stringify(variableStorage));
+// function storage(storagevariable) {
+//   if (localStorage.getItem("storagearray") == null) {
+//     variableStorage = storagevariable;
+//     console.log("No hay storage");
+//   } else {
+//     // variableStorage = localStorage.getItem(JSON.parse(storagearray));
+//   }
+
+//   localStorage.setItem("storagearray1", JSON.stringify(variableStorage));
+//   render(variableStorage);
+// }
+
+// Función que no sirve
+function storage(storagevariable) {
+  variableStorage = storagevariable;
+  localStorage.setItem("storagearray1", JSON.stringify(variableStorage));
+
+  // if (
+  //   localStorage.getItem("storagearray1") == "null" ||
+  //   localStorage.getItem("storagearray1") == null
+  // ) {
+  //   console.log("No hay storage guardado");
+  //   variableStorage = storagevariable;
+  //   localStorage.setItem("storagearray1", JSON.stringify(variableStorage));
+
+  // } else {
+  //   console.log("Si hay storage guardado");
+  //   variableStorage = JSON.parse(localStorage.getItem("storagearray1"));
+
+  //   // variableStorage = localStorage.getItem(JSON.parse(variableStorage));
+
+  //   localStorage.setItem("storagearray1", JSON.stringify(variableStorage));
+  // }
+
   render(variableStorage);
 }
