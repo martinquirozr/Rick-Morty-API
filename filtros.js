@@ -21,10 +21,15 @@ document.querySelector("#muerto").addEventListener("click", function () {
     buscarEstado("Dead");
   }
 });
+document.querySelector("#desconocido").addEventListener("click", function () {
+  {
+    buscarEstado("unknown");
+  }
+});
 
 document.querySelector("#todos").addEventListener("click", function () {
   {
-    render(personajes);
+    storage(personajes);
     console.log(personajes);
   }
 });
